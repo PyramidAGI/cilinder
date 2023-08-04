@@ -27,14 +27,15 @@ namespace cilinder
             {
                 var rec = new flowfieldrecord();
                 word = line.Split('|');
-                rec.cardid = word[0];
-                rec.e0 = word[1];
-                rec.e1 = word[2];
-                rec.e2 = word[3];
-                rec.e3 = word[4];
-                rec.val = Convert.ToByte(word[5]);
-                rec.perc = Convert.ToByte(word[6]);
-                rec.nlsentence = word[7];
+                rec.ffid = word[0];
+                rec.cardid = word[1];
+                rec.e0 = word[2];
+                rec.e1 = word[3];
+                rec.e2 = word[4];
+                rec.e3 = word[5];
+                rec.val = Convert.ToByte(word[6]);
+                rec.perc = Convert.ToByte(word[7]);
+                rec.nlsentence = word[8];
                 ff.Add(rec);
             }
             sr2.Close();
@@ -68,11 +69,19 @@ namespace cilinder
             Console.WriteLine("stacked flowfield e2 = " + flowfield_e2);
             //PTD: TTD: implement freq count here
             List<crecord> freq = cnt.Do();
+            int maxfreq = 0;
+            string maxquark = "";
             foreach (var item in freq)
             {
                 Console.WriteLine(item.word + "; freq = " + item.freq);
+                int freqint = Convert.ToInt32(item.freq);
+                if (freqint > maxfreq)
+                {
+                    maxfreq = freqint;
+                    maxquark = item.word;
+                }
             }
-            Console.WriteLine("ALL FREQ COUNTS ARE SMALL SO NO -FLOWFIELD TRACTION- IS DETECTED!");
+            Console.WriteLine("the most traction is detected on : " + maxquark + " with freq = " + maxfreq.ToString());
             Console.ReadLine();
         }
     }
