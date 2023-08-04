@@ -8,6 +8,12 @@ namespace cilinder
     {
         static void Main(string[] args)
         {
+            string myffid = "ff1"; //default if no command line argument is given
+            if (args.Length > 0)
+            {
+                myffid = args[0];
+                Console.WriteLine("command line parameter ffid detected = " + myffid);
+            }
             string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\argonaut\";
             Counter cnt = new Counter(documentsPath);
             List<string> li = new List<string>();
@@ -36,7 +42,10 @@ namespace cilinder
                 rec.val = Convert.ToByte(word[6]);
                 rec.perc = Convert.ToByte(word[7]);
                 rec.nlsentence = word[8];
-                ff.Add(rec);
+                if (rec.ffid == myffid)
+                {
+                    ff.Add(rec);
+                }
             }
             sr2.Close();
             string message = "";
@@ -77,14 +86,14 @@ namespace cilinder
                 sw.WriteLine(item.e2);
             }
             sw.Close();
-            Console.WriteLine("stacked flowfield e2 = " + flowfield_e2);
+            Console.WriteLine("stacked flowfield on e2 = " + flowfield_e2);
             //PTD: TTD: implement freq count here
             List<crecord> freq = cnt.Do();
             int maxfreq = 0;
             string maxquark = "";
             foreach (var item in freq)
             {
-                Console.WriteLine(item.word + "; freq = " + item.freq);
+                //Console.WriteLine(item.word + "; freq = " + item.freq);
                 int freqint = Convert.ToInt32(item.freq);
                 if (freqint > maxfreq)
                 {
