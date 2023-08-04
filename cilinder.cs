@@ -42,19 +42,30 @@ namespace cilinder
             string message = "";
 
             string[] sentpart;
-            while (message !="q")
+            //check input file or else ask console input
+            try
             {
-                Console.WriteLine("please give your input");
+                StreamReader si = new StreamReader(documentsPath + "cilinput.txt");
+                message = si.ReadLine();
+                Console.WriteLine("input from file = " + message);
+                si.Close();
+            }
+            catch
+            {
+                Console.WriteLine("no input from file detected, please give your input");
                 message = Console.ReadLine();
-                foreach (var item in li)
+            }
+            bool found = false;
+            foreach (var item in li)
+            {
+                sentpart = item.Split('|');
+                if (sentpart[0].Contains(message)) //search in first part of record
                 {
-                    sentpart = item.Split('|');
-                    if (sentpart[0].Contains(message)) //search in first part of record
-                    {
-                        Console.WriteLine(" found line = " + item);
-                    }
+                    Console.WriteLine(" found line = " + item);
+                    found = true;
                 }
             }
+            if (!found) Console.WriteLine("Attention: no items found in lkpadd table");
             //ptd: test: print flowfield records
             string flowfield_e2 = "";
             StreamWriter sw = new StreamWriter(documentsPath + "input.txt"); //used to store quark hits in and used by counter.cs
@@ -86,5 +97,3 @@ namespace cilinder
         }
     }
 }
-
-//C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe cilinder.cs counter.cs crecord.cs flowfieldrecord.cs
