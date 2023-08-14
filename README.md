@@ -1,5 +1,5 @@
 # cilinder
-this is a simple program that illustrates some of the concepts introduced in paper 1 and paper 2 from the website www.pnf7.nl.\
+this is a simple program that illustrates some of the concepts introduced in paper 1 and paper 2 from the website www.pnf7.nl. \
 the log.txt file is a redirect of some console in- and output of a single run.\
 inputs:
 the cilinder.txt file can be populated with data for different runs and configurations\
