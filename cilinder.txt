@@ -1,4 +1,4 @@
-dog|my dog is nice
+chair|my chair is broken
 cat|your cat is also nice
 bird|the bird flies
 dog|your dog is called bobo
