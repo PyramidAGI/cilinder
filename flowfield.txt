@@ -1,0 +1,4 @@
+ff1|c1|a|car001|loc|newyork001|0|80|the car is driving towards new york
+ff1|c2|a|goal001|iaw|newyork001|0|80|the goal is NY
+ff1|c3|a|road001|isa|channel|0|99|the road is route66
+ff1|c4|a|environment001|isa|nature|0|99|the environment consists of a lot of trees and some pastures

@@ -14,7 +14,8 @@ namespace cilinder
                 myffid = args[0];
                 Console.WriteLine("command line parameter ffid detected = " + myffid);
             }
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\argonaut\";
+            //string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\argonaut\";
+            string documentsPath = ""; //PTD: changed 14-8-2023
             Counter cnt = new Counter(documentsPath);
             List<string> li = new List<string>();
             List<flowfieldrecord> ff = new List<flowfieldrecord>();

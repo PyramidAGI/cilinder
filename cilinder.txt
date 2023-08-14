@@ -1,0 +1,6 @@
+dog|my dog is nice
+cat|your cat is also nice
+bird|the bird flies
+dog|your dog is called bobo
+stat loc tomove|packet add +loc20
+hello|hello

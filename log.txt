@@ -1,0 +1,8 @@
+no input from file detected, please give your input
+ found line = cat|your cat is also nice
+flowfield rec = car001 ; c1 ; the car is driving towards new york
+flowfield rec = goal001 ; c2 ; the goal is NY
+flowfield rec = road001 ; c3 ; the road is route66
+flowfield rec = environment001 ; c4 ; the environment consists of a lot of trees and some pastures
+stacked flowfield on e2 = loc iaw isa isa 
+the most traction is detected on : isa with freq = 2
