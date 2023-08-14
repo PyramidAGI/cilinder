@@ -5,6 +5,6 @@ inputs:
 the cilinder.txt file can be populated with data for different runs and configurations\
 the flowfield.txt file has a key 'ffid' so that it can be used for multiple flowfields (running the same cilinder.exe with parameter ff1,ff2 etc.)\
 cilinput.txt contains the search term for lkpadd\
-input.txt is a temp file used by the program\
+input.txt is a temp file used by the program and should be renamed into something like ffcount.txt\
 \
 this folder is simple so that it can be replicated using a 'Meta program'
